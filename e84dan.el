@@ -14,9 +14,12 @@
 ;; I like the menubar and scrollbars, don't judge me.
 (menu-bar-mode)
 (scroll-bar-mode)
+(tool-bar-mode -1)
+(tabbar-mode -1)
 
-;; Switch to blackboard theme
-(color-theme-blackboard)
+;; Setup the color theme of choice
+;(color-theme-blackboard)
+(color-theme-arjen)
 
 ;; Open cucumber feature files in ruby-mode too
 (add-to-list 'auto-mode-alist '("feature$" . ruby-mode))
