@@ -1,3 +1,6 @@
+;; Add the e84dan directory to load support
+(add-to-list 'load-path (concat dotfiles-dir "/e84dan-emacs"))
+
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
 
@@ -15,10 +18,12 @@
 ;(tabbar-mode -1)
 
 ;; Setup the color theme of choice
-(color-theme-twilight)
+;;(color-theme-twilight)
 
-;; This is only available with Aquamacs
-;;(color-theme-arjen)
+;; This is only available with Aquamacs by default but is available
+;; from the author on github
+(require 'color-theme-arjen)
+(color-theme-arjen)
 
 ;; Open cucumber feature files in ruby-mode too
 (add-to-list 'auto-mode-alist '("feature$" . ruby-mode))
