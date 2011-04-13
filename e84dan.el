@@ -53,3 +53,11 @@
 
 ;; Allow quick deletion of the region when typing
 (delete-selection-mode 1)
+
+;; Maximize the window on launch
+(defun e84-maximize-frame ()
+  (interactive)
+  (set-frame-position (selected-frame) 0 0)
+  (set-frame-size (selected-frame) 1000 1000))
+
+(e84-maximize-frame)
