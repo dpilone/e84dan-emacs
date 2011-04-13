@@ -15,7 +15,7 @@
 ;(tabbar-mode -1)
 
 ;; Setup the color theme of choice
-(color-theme-blackboard)
+(color-theme-twilight)
 
 ;; This is only available with Aquamacs
 ;;(color-theme-arjen)
@@ -28,3 +28,10 @@
 ;; out the windmove default bindings in starter-kit-bindings.el
 (windmove-default-keybindings 'super)
 (setq shift-select-mode t)
+
+;; Enable line numbers for ruby and javascript files
+(add-hook 'ruby-mode-hook
+          (lambda() (linum-mode 1)))
+(add-hook 'espresso-mode-hook
+          (lambda() (linum-mode 1)))
+
