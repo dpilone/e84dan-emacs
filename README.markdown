@@ -16,8 +16,11 @@ Then load my customizations with the following in ~/.emacs.d/custom.el:
 
 Once emacs is up, drop in the awesome:
 
-    ;; Install yasnippet
-    M-x package-install => yasnippet-bundle
+    ;; Install yasnippet - unfortunately the full version isn't
+    ;; available on elpa
+    ;; Download from here:
+    ;; http://yasnippet.googlecode.com/files/yasnippet-0.6.1c.tar.bz2
+    ;; Then untar that into your ~/.emacs.d
 
     ;; Install rinari
     M-X package-install => rinari
