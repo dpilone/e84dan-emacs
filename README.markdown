@@ -14,3 +14,9 @@ Then load my customizations with the following in ~/.emacs.d/custom.el:
     ;; Load my real customizations
     (load "e84dan-emacs/e84dan")
 
+Once emacs is up, drop in the awesome:
+    ;; Install yasnippet
+    M-x package-install => yasnippet-bundle
+
+    ;; Install rinari
+    M-X package-install => rinari
