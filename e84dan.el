@@ -23,3 +23,8 @@
 ;; Open cucumber feature files in ruby-mode too
 (add-to-list 'auto-mode-alist '("feature$" . ruby-mode))
 
+;; Change windmove binding to "meta" so I can enable shift + arrow
+;; keys to select text - unfortunately you also have to comment
+;; out the windmove default bindings in starter-kit-bindings.el
+(windmove-default-keybindings 'super)
+(setq shift-select-mode t)
