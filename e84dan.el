@@ -40,13 +40,6 @@
 (add-hook 'espresso-mode-hook
           (lambda() (linum-mode 1)))
 
-;; Load YASnippet
-;; (add-to-list 'load-path
-;;                   "~/.emacs.d/yasnippet-0.6.1c")
-;;     (require 'yasnippet) ;; not yasnippet-bundle
-;;     (yas/initialize)
-;;     (yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
-
 ;; Load my custom yasnippet snippets...
 (setq yas/root-directory "~/.emacs.d/e84dan-emacs/snippets")
 (yas/load-directory yas/root-directory)
