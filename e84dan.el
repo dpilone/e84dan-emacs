@@ -25,9 +25,6 @@
 (require 'color-theme-arjen)
 (color-theme-arjen)
 
-;; Open cucumber feature files in ruby-mode too
-(add-to-list 'auto-mode-alist '("feature$" . ruby-mode))
-
 ;; Change windmove binding to "meta" so I can enable shift + arrow
 ;; keys to select text - unfortunately you also have to comment
 ;; out the windmove default bindings in starter-kit-bindings.el
@@ -54,3 +51,22 @@
   (set-frame-size (selected-frame) 1000 1000))
 
 (e84-maximize-frame)
+(global-set-key (kbd "s-/") 'hippie-expand)
+
+;; We use JRuby as our Ruby
+(setq ruby-program-name "jruby")
+(setq ruby-compilation-executable "jruby")
+(setq inf-ruby-default-implementation "jruby")
+(setq ri-ruby-program "jruby")
+
+;; Add support for rspec
+(add-to-list 'load-path "~/.emacs.d/rspec-mode")
+(require 'rspec-mode)
+
+;; Add support for cucumber feature editing
+(add-to-list 'load-path "~/.emacs.d/feature-mode")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; Load Cucumber snippets
+(yas/load-directory "~/.emacs.d/feature-mode/snippets")

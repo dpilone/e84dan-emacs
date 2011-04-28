@@ -5,6 +5,14 @@ emacs starter kit:
 
     git clone https://github.com/technomancy/emacs-starter-kit.git ~/.emacs.d
 
+Then the cucumber feature editing support:
+
+    git clone https://github.com/michaelklishin/cucumber.el.git ~/.emacs.d/feature-mode
+
+Then rspec editing support:
+
+    git clone https://github.com/pezra/rspec-mode.git ~/.emacs.d/rspec-mode
+
 Followed by my customizations:
 
     git clone https://github.com/dpilone/e84dan-emacs.git ~/.emacs.d/e84dan-emacs
