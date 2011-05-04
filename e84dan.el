@@ -1,6 +1,22 @@
 ;; Add the e84dan directory to load support
 (add-to-list 'load-path (concat dotfiles-dir "/e84dan-emacs"))
 
+;; Move autosave and backup files to a private temp directory
+(defvar user-temporary-file-directory
+  (concat temporary-file-directory user-login-name "/"))
+(make-directory user-temporary-file-directory t)
+(setq backup-by-copying t)
+(setq backup-directory-alist
+      `(("." . ,user-temporary-file-directory)
+        (,tramp-file-name-regexp nil)))
+(setq auto-save-list-file-prefix
+      (concat user-temporary-file-directory ".auto-saves-"))
+(setq auto-save-file-name-transforms
+      `((".*" ,user-temporary-file-directory t)))
+
+;; I prefer 4 spaces for tab indent
+(setq-default tab-width 4)
+
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
 
@@ -16,9 +32,6 @@
 (scroll-bar-mode)
 (tool-bar-mode -1)
 ;(tabbar-mode -1)
-
-;; Setup the color theme of choice
-;;(color-theme-twilight)
 
 ;; This is only available with Aquamacs by default but is available
 ;; from the author on github
@@ -74,3 +87,6 @@
 ;; Add coffeescript support
 (add-to-list 'load-path "~/.emacs.d/coffee-mode")
 (require 'coffee-mode)
+(setq coffee-js-mode 'javascript-mode)
+(define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+(setq coffee-tab-width 2)
