@@ -90,3 +90,7 @@
 (setq coffee-js-mode 'javascript-mode)
 (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
 (setq coffee-tab-width 2)
+
+(add-to-list 'load-path "~/.emacs.d/textmate.el")
+(require 'textmate)
+(textmate-mode)
