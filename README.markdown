@@ -13,6 +13,10 @@ Then rspec editing support:
 
     git clone https://github.com/pezra/rspec-mode.git ~/.emacs.d/rspec-mode
 
+Then coffeescript support:
+
+    git clone git://github.com/defunkt/coffee-mode.git
+
 Followed by my customizations:
 
     git clone https://github.com/dpilone/e84dan-emacs.git ~/.emacs.d/e84dan-emacs

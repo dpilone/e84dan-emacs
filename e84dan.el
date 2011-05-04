@@ -54,10 +54,10 @@
 (global-set-key (kbd "s-/") 'hippie-expand)
 
 ;; We use JRuby as our Ruby
-(setq ruby-program-name "jruby")
-(setq ruby-compilation-executable "jruby")
-(setq inf-ruby-default-implementation "jruby")
-(setq ri-ruby-program "jruby")
+;(setq ruby-program-name "jruby")
+;(setq ruby-compilation-executable "jruby")
+;(setq inf-ruby-default-implementation "jruby")
+;(setq ri-ruby-program "jruby")
 
 ;; Add support for rspec
 (add-to-list 'load-path "~/.emacs.d/rspec-mode")
@@ -70,3 +70,7 @@
 
 ;; Load Cucumber snippets
 (yas/load-directory "~/.emacs.d/feature-mode/snippets")
+
+;; Add coffeescript support
+(add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(require 'coffee-mode)
