@@ -89,8 +89,14 @@
 (require 'coffee-mode)
 (setq coffee-js-mode 'javascript-mode)
 (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
-(setq coffee-tab-width 2)
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2))
 
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
+
+;; Add textmate support
 (add-to-list 'load-path "~/.emacs.d/textmate.el")
 (require 'textmate)
 (textmate-mode)
