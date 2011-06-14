@@ -21,6 +21,16 @@ Then textmate mimicing:
 
     git clone git://github.com/defunkt/textmate.el.git
 
+Then rvm support:
+
+    git clone https://github.com/senny/rvm.el.git rvm
+
+Then rinari (RoR) support:
+     git clone https://github.com/eschulte/rinari.git
+     cd rinari/
+     git submodule init
+     git submodule update
+
 Followed by my customizations:
 
     git clone https://github.com/dpilone/e84dan-emacs.git ~/.emacs.d/e84dan-emacs
@@ -34,6 +44,3 @@ Once emacs is up, drop in the awesome:
 
     ;; Install yasnippet
     M-X package-install => yasnippet-bundle
-
-    ;; Install rinari
-    M-X package-install => rinari

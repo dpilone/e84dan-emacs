@@ -35,8 +35,9 @@
 
 ;; This is only available with Aquamacs by default but is available
 ;; from the author on github
-(require 'color-theme-arjen)
-(color-theme-arjen)
+;;(require 'color-theme-arjen)
+;;(color-theme-arjen)
+(color-theme-twilight)
 
 ;; Change windmove binding to "meta" so I can enable shift + arrow
 ;; keys to select text - unfortunately you also have to comment
@@ -100,3 +101,12 @@
 (add-to-list 'load-path "~/.emacs.d/textmate.el")
 (require 'textmate)
 (textmate-mode)
+
+;; Add RVM support
+(add-to-list 'load-path "~/.emacs.d/rvm")
+(require 'rvm)
+(rvm-use-default)
+
+;; Add rinari support
+(add-to-list 'load-path "~/.emacs.d/rinari")
+(require 'rinari)
