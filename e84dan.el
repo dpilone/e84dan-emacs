@@ -15,7 +15,7 @@
       `((".*" ,user-temporary-file-directory t)))
 
 ;; I prefer 4 spaces for tab indent
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
@@ -34,10 +34,13 @@
 ;(tabbar-mode -1)
 
 ;; This is only available with Aquamacs by default but is available
-;; from the author on github
-;;(require 'color-theme-arjen)
-;;(color-theme-arjen)
-(color-theme-twilight)
+;; from the author on github.  We deliberately load ld-dark then arjen
+;; because I want the fonts from ld-dark.
+(require 'color-theme-arjen)
+(color-theme-ld-dark)
+(color-theme-arjen)
+;(color-theme-twilight)
+;(color-theme-railscasts)
 
 ;; Change windmove binding to "meta" so I can enable shift + arrow
 ;; keys to select text - unfortunately you also have to comment
@@ -67,26 +70,20 @@
 (e84-maximize-frame)
 (global-set-key (kbd "s-/") 'hippie-expand)
 
-;; We use JRuby as our Ruby
-;(setq ruby-program-name "jruby")
-;(setq ruby-compilation-executable "jruby")
-;(setq inf-ruby-default-implementation "jruby")
-;(setq ri-ruby-program "jruby")
-
 ;; Add support for rspec
-(add-to-list 'load-path "~/.emacs.d/rspec-mode")
+(add-to-list 'load-path "~/.emacs.d/src/rspec-mode")
 (require 'rspec-mode)
 
 ;; Add support for cucumber feature editing
-(add-to-list 'load-path "~/.emacs.d/feature-mode")
+(add-to-list 'load-path "~/.emacs.d/src/feature-mode")
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; Load Cucumber snippets
-(yas/load-directory "~/.emacs.d/feature-mode/snippets")
+(yas/load-directory "~/.emacs.d/src/feature-mode/snippets")
 
 ;; Add coffeescript support
-(add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(add-to-list 'load-path "~/.emacs.d/src/coffee-mode")
 (require 'coffee-mode)
 (setq coffee-js-mode 'javascript-mode)
 (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
@@ -98,15 +95,26 @@
   '(lambda() (coffee-custom)))
 
 ;; Add textmate support
-(add-to-list 'load-path "~/.emacs.d/textmate.el")
+(add-to-list 'load-path "~/.emacs.d/src/textmate")
 (require 'textmate)
 (textmate-mode)
 
 ;; Add RVM support
-(add-to-list 'load-path "~/.emacs.d/rvm")
+(add-to-list 'load-path "~/.emacs.d/src/rvm")
 (require 'rvm)
 (rvm-use-default)
 
 ;; Add rinari support
-(add-to-list 'load-path "~/.emacs.d/rinari")
+(add-to-list 'load-path "~/.emacs.d/src/rinari")
 (require 'rinari)
+
+;; Add git-emacs
+(add-to-list 'load-path "~/.emacs.d/src/git-emacs/")
+(require 'git-emacs)
+(require 'git-status)
+(setq git-state-modeline-decoration 'git-state-decoration-large-dot)
+
+; (global-set-key (kbd "C-x M-g") 'git-status)
+
+;; Start the emacs server
+(server-start)
